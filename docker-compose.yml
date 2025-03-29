@@ -1,0 +1,23 @@
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: demouser
+      RABBITMQ_DEFAULT_PASS: demopass
+      RABBITMQ_CONFIG_FILE: /etc/rabbitmq/rabbitmq.conf
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: "-rabbitmq_management load_definitions \"/etc/rabbitmq/definitions.json\""
+      RABBITMQ_PROMETHEUS_RETENTION_POLICY: "14400"
+    volumes:
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf       
+      - ./rabbitmq.json:/etc/rabbitmq/definitions.json   
+    ports:
+      - "5672:5672"      # RabbitMQ main port
+      - "15672:15672"    # RabbitMQ management port
+      - "15692:15692"    # RabbitMQ Prometheus metrics port
+    command: rabbitmq-server
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
