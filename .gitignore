@@ -2,5 +2,6 @@
 *.log
 
 # ignore ALL files in ANY directory named temp
-old/
-awboardenv/ 
+old/*
+awboardenv/* 
+__pycache__/*
