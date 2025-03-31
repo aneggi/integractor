@@ -1,4 +1,5 @@
-#Information:
+INTEGRACTOR
+============
 
 Integractor example
 
