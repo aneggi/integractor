@@ -19,10 +19,13 @@ def production_main(message):
     # Request to send data
     transformer.publish_message(message)
 
-# Set the generator
+# Set the transformer
 transformer = Transformer(mock_callback=mock_main, production_callback=production_main,queue_name="q1",exchange_name="ex2",routing_key="rk5")
+
+def main():
+    transformer.run(host='0.0.0.0', port=5554)
 
 # Run the Flask app
 if __name__ == "__main__":
-    transformer.run(host='0.0.0.0', port=5554)
+    main()
 

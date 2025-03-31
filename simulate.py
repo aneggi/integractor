@@ -39,6 +39,8 @@ def supervisor():
                 processes[worker_id].start()
         time.sleep(1)
 
+        
+
 if __name__ == "__main__":
     if not is_rabbitmq_running():
         print("RabbitMQ is not running on localhost. Please start RabbitMQ and try again.")

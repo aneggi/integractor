@@ -12,38 +12,68 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Action</th>
+                <th>IN</th>
+                <th>OUT</th>
+                <th>MODE</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>GEN A</td>
+                <td>Producer A</td>
                 <td>
+                    
+                </td> <td>
                     <a href="http://10.12.129.4:5552/out/on" class="btn btn-success me-2">OUT Start</a>
                     <a href="http://10.12.129.4:5552/out/off" class="btn btn-danger">OUT Stop</a>
                 </td>
+                <td>
+                    <a href="http://10.12.129.4:5552/mode/mock" class="btn btn-warning me-2">MODE mock</a>
+                    <a href="http://10.12.129.4:5552/mode/production" class="btn btn-info">MODE prooduction</a>
+                </td>
             </tr>
             <tr>
-                <td>GEN B</td>
+                <td>Producer B</td>
+                <td>
+                    
+                </td>
                 <td>
                     <a href="http://10.12.129.4:5553/out/on" class="btn btn-success me-2">OUT Start</a>
                     <a href="http://10.12.129.4:5553/out/off" class="btn btn-danger">OUT Stop</a>
                 </td>
-            </tr>
-            <tr>
-                <td>TRANF D</td>
                 <td>
-                    <a href="http://10.12.129.4:5554/in/on" class="btn btn-success me-2">IN Start</a>
-                    <a href="http://10.12.129.4:5554/in/off" class="btn btn-danger">IN Stop</a>
-                    <a href="http://10.12.129.4:5554/out/on" class="btn btn-success me-2">OUT Start</a>
-                    <a href="http://10.12.129.4:5554/out/off" class="btn btn-danger">OUT Stop</a>
+                    <a href="http://10.12.129.4:5553/mode/mock" class="btn btn-warning me-2">MODE mock</a>
+                    <a href="http://10.12.129.4:5553/mode/production" class="btn btn-info">MODE prooduction</a>
                 </td>
             </tr>
             <tr>
-                <td>CONS F</td>
+                <td>Tranformer C</td>
+                <td>
+                    <a href="http://10.12.129.4:5554/in/on" class="btn btn-success me-2">IN Start</a>
+                    <a href="http://10.12.129.4:5554/in/off" class="btn btn-danger">IN Stop</a>
+
+                </td> <td>
+                     
+                    <a href="http://10.12.129.4:5554/out/on" class="btn btn-success me-2">OUT Start</a>
+                    <a href="http://10.12.129.4:5554/out/off" class="btn btn-danger">OUT Stop</a>
+
+                </td> <td>
+                
+                    <a href="http://10.12.129.4:5554/mode/mock" class="btn btn-warning me-2">MODE mock</a>
+                    <a href="http://10.12.129.4:5554/mode/production" class="btn btn-info">MODE prooduction</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Consumer D</td>
                 <td>
                     <a href="http://10.12.129.4:5555/in/on" class="btn btn-success me-2">IN Start</a>
                     <a href="http://10.12.129.4:5555/in/off" class="btn btn-danger">IN Stop</a>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    <a href="http://10.12.129.4:5555/mode/mock" class="btn btn-warning me-2">MODE mock</a>
+                    <a href="http://10.12.129.4:5555/mode/production" class="btn btn-info">MODE prooduction</a>
                 </td>
             </tr>
            

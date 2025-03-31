@@ -15,10 +15,13 @@ def mock_main(message):
 def production_main(message):
     print(f"Production Processing message in main.py: {message}")
 
-# Set the generator
-consumer = Consumer( mock_callback=mock_main, production_callback=production_main,queue_name="queuee")
+# Set the consumer
+consumer = Consumer( mock_callback=mock_main, production_callback=production_main,queue_name="q2")
+
+def main():
+    consumer.run(host='0.0.0.0', port=5555)
 
 # Run the Flask app
 if __name__ == "__main__":
-    consumer.run(host='0.0.0.0', port=5555)
+    main()
 

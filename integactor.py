@@ -7,7 +7,7 @@ import configparser
 from flask import Flask
 from termcolor import colored
 
-class Generator:
+class Producer:
     def __init__(self, config_file='config.ini', mock_output=None,production_output=None, exchange_name="sensor_queue", routing_key="sensor2"):
         # Configuration
         self.config = configparser.ConfigParser()
@@ -154,7 +154,7 @@ class Consumer:
             pika.ConnectionParameters(host=self.rabbitmq_host, port=self.rabbitmq_port, credentials=credentials)
         )
         channel = connection.channel()
-        args = {"x-message-ttl": 5000,"x-overflow": "drop-head"}  
+        args = {}  #"x-message-ttl": 5000, "x-overflow": "drop-head"
         channel.queue_declare(queue=self.queue_name, durable=True, arguments=args)
         return connection, channel
 
@@ -267,15 +267,15 @@ class Transformer:
     def publish_message(self, message):
 
         print(colored(f'Self:{self} and Message:{message}', 'red', attrs=['bold']))
-        channel = self.setup_rabbitmq_connection()
-        if self.forward_activate:
+        connection, channel = self.setup_rabbitmq_connection()
+        if not self.forward_activate:
             print(colored(f'Forward disabled.', 'red', attrs=['bold']))
             return "Forward disabled."
         else:
             message = json.dumps({'error': 'No moke_output or production_output provided'})
             channel.basic_publish(exchange=self.exchange_name, routing_key=self.routing_key, body=message, properties=pika.BasicProperties(expiration=self.timeout))
             print(colored(f'Sent data to {self.exchange_name}: {message}', 'green', attrs=['bold']))
-
+        connection.close()
 
         
 

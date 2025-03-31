@@ -1,4 +1,4 @@
-from integactor import Generator
+from integactor import Producer
 import json
 import random
 import time
@@ -21,9 +21,12 @@ def production_main():
     }
     return json.dumps(data)
 
-# Set the generator
-generator = Generator(mock_output=mock_main, production_output=production_main , exchange_name="ex1", routing_key="rk9")
+# Set the producer
+producer = Producer(mock_output=mock_main, production_output=production_main , exchange_name="ex1", routing_key="rk9")
+
+def main():
+    producer.run(host='0.0.0.0', port=5553)
 
 # Run the Flask app
 if __name__ == "__main__":
-    generator.run(host='0.0.0.0', port=5553)
+    main()
