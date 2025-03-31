@@ -1,4 +1,4 @@
-from integactor import Transformer
+from integractor import Transformer
 import json
 import random
 import time

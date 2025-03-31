@@ -1,4 +1,4 @@
-from integactor import Consumer
+from integractor import Consumer
 import json
 import random
 import time

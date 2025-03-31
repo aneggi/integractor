@@ -41,7 +41,7 @@ consumer        -> port: 5555
     With USER and PASSWORD: demo
 
     There is a simple cockpit on:
-    "Cockpit.html" and you can start and stop specific component with the buttons
+    "Index.html" and you can start and stop specific component with the buttons
 
 
 

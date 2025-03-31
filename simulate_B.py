@@ -1,4 +1,4 @@
-from integactor import Producer
+from integractor import Producer
 import json
 import random
 import time
