@@ -257,7 +257,7 @@ class Transformer:
         )
         channel = connection.channel()
         # Declare the queue with the provided queue name
-        args = {"x-message-ttl": 5000,"x-overflow": "drop-head"}  
+        args = {}  # "x-message-ttl": 5000,"x-overflow": "drop-head"
         channel.queue_declare(queue=self.queue_name, durable=True, arguments=args)
         #channel.queue_declare(queue=self.queue_name)
         return connection, channel

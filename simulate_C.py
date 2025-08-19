@@ -1,4 +1,4 @@
-from integractor import Transformer
+from integractor import Consumer, Transformer
 import json
 import random
 import time
@@ -20,7 +20,7 @@ def production_main(message):
     transformer.publish_message(message)
 
 # Set the transformer
-transformer = Transformer(mock_callback=mock_main, production_callback=production_main,queue_name="q1",exchange_name="ex2",routing_key="rk5")
+transformer = Transformer(mock_callback=mock_main, production_callback=production_main,queue_name="qC",exchange_name="exD",routing_key="rk5")
 
 def main():
     transformer.run(host='0.0.0.0', port=5554)

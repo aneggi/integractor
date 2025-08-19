@@ -22,7 +22,7 @@ def production_main():
     return json.dumps(data)
 
 # Set the producer
-producer = Producer(mock_output=mock_main, production_output=production_main , exchange_name="ex1", routing_key="rk9")
+producer = Producer(mock_output=mock_main, production_output=production_main , exchange_name="exC", routing_key="rk9")
 
 def main():
     producer.run(host='0.0.0.0', port=5553)

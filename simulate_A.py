@@ -21,7 +21,7 @@ def production_main():
     return json.dumps(data)
 
 # Set the producer
-producer = Producer(mock_output=mock_main, production_output=production_main , exchange_name="ex2", routing_key="rk1")
+producer = Producer(mock_output=mock_main, production_output=production_main , exchange_name="exD", routing_key="rk1")
 
 
 def main():

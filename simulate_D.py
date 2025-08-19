@@ -16,7 +16,7 @@ def production_main(message):
     print(f"Production Processing message in main.py: {message}")
 
 # Set the consumer
-consumer = Consumer( mock_callback=mock_main, production_callback=production_main,queue_name="q2")
+consumer = Consumer( mock_callback=mock_main, production_callback=production_main,queue_name="qD")
 
 def main():
     consumer.run(host='0.0.0.0', port=5555)
